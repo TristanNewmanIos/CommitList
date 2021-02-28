@@ -8,8 +8,11 @@
 import Foundation
 
 class CommitListViewModel: CommitListViewModelProtocol {
+    
     var view: CommitListViewControllerProtocol!
     var service: CommitsServiceProtocol!
     
-    
+    func viewDidLoad() {
+        
+    }
 }

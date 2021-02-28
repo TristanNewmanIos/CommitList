@@ -21,3 +21,7 @@ protocol CommitListViewControllerProtocol: UIViewController {
 protocol CommitsServiceProtocol {
     func getCommits(completion: @escaping() -> Void)
 }
+
+protocol CommitTableViewCellDelegate: class {
+    func detailedLabelTapped()
+}
