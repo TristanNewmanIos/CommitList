@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24407D3925EBD9A2005D8779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D3825EBD9A2005D8779 /* AppDelegate.swift */; };
-		24407D3B25EBD9A2005D8779 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D3A25EBD9A2005D8779 /* SceneDelegate.swift */; };
-		24407D3D25EBD9A2005D8779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D3C25EBD9A2005D8779 /* ViewController.swift */; };
-		24407D4025EBD9A2005D8779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24407D3E25EBD9A2005D8779 /* Main.storyboard */; };
 		24407D4325EBD9A2005D8779 /* CommitList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24407D4125EBD9A2005D8779 /* CommitList.xcdatamodeld */; };
 		24407D4525EBD9A8005D8779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24407D4425EBD9A8005D8779 /* Assets.xcassets */; };
 		24407D4825EBD9A8005D8779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24407D4625EBD9A8005D8779 /* LaunchScreen.storyboard */; };
@@ -53,9 +50,6 @@
 		1CBD1067BCDD1DFC1E29C3D0 /* Pods-CommitList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.release.xcconfig"; path = "Target Support Files/Pods-CommitList/Pods-CommitList.release.xcconfig"; sourceTree = "<group>"; };
 		24407D3525EBD9A2005D8779 /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24407D3825EBD9A2005D8779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24407D3A25EBD9A2005D8779 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24407D3C25EBD9A2005D8779 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		24407D3F25EBD9A2005D8779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24407D4225EBD9A2005D8779 /* CommitList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CommitList.xcdatamodel; sourceTree = "<group>"; };
 		24407D4425EBD9A8005D8779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24407D4725EBD9A8005D8779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -187,9 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				24407D3825EBD9A2005D8779 /* AppDelegate.swift */,
-				24407D3A25EBD9A2005D8779 /* SceneDelegate.swift */,
-				24407D3C25EBD9A2005D8779 /* ViewController.swift */,
-				24407D3E25EBD9A2005D8779 /* Main.storyboard */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -369,7 +360,6 @@
 			files = (
 				24407D4825EBD9A8005D8779 /* LaunchScreen.storyboard in Resources */,
 				24407D4525EBD9A8005D8779 /* Assets.xcassets in Resources */,
-				24407D4025EBD9A2005D8779 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,14 +491,12 @@
 				24407D9B25EBDF75005D8779 /* CommitListProtocols.swift in Sources */,
 				24407D4325EBD9A2005D8779 /* CommitList.xcdatamodeld in Sources */,
 				24407DCA25EBE0CE005D8779 /* Commit.swift in Sources */,
-				24407D3D25EBD9A2005D8779 /* ViewController.swift in Sources */,
 				24407D8E25EBDF32005D8779 /* CommitsResponseObject.swift in Sources */,
 				24407DC425EBE08E005D8779 /* CommitCellViewModel.swift in Sources */,
 				24407D3925EBD9A2005D8779 /* AppDelegate.swift in Sources */,
 				24407DA825EBDFB0005D8779 /* CommitListViewController.swift in Sources */,
 				24407DBC25EBE082005D8779 /* CommitTableViewCell.swift in Sources */,
 				24407DAD25EBDFBE005D8779 /* CommitListViewModel.swift in Sources */,
-				24407D3B25EBD9A2005D8779 /* SceneDelegate.swift in Sources */,
 				24407DA325EBDFA2005D8779 /* CommitListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,14 +534,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		24407D3E25EBD9A2005D8779 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24407D3F25EBD9A2005D8779 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		24407D4625EBD9A8005D8779 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
