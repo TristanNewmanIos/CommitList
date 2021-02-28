@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,16 @@
 		24407D4825EBD9A8005D8779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24407D4625EBD9A8005D8779 /* LaunchScreen.storyboard */; };
 		24407D5325EBD9A9005D8779 /* CommitListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D5225EBD9A9005D8779 /* CommitListTests.swift */; };
 		24407D5E25EBD9A9005D8779 /* CommitListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D5D25EBD9A9005D8779 /* CommitListUITests.swift */; };
+		24407D8E25EBDF32005D8779 /* CommitsResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D8D25EBDF32005D8779 /* CommitsResponseObject.swift */; };
+		24407D9625EBDF5D005D8779 /* CommitsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D9525EBDF5D005D8779 /* CommitsService.swift */; };
+		24407D9B25EBDF75005D8779 /* CommitListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407D9A25EBDF75005D8779 /* CommitListProtocols.swift */; };
+		24407DA325EBDFA2005D8779 /* CommitListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DA225EBDFA2005D8779 /* CommitListCoordinator.swift */; };
+		24407DA825EBDFB0005D8779 /* CommitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DA725EBDFB0005D8779 /* CommitListViewController.swift */; };
+		24407DAD25EBDFBE005D8779 /* CommitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DAC25EBDFBE005D8779 /* CommitListViewModel.swift */; };
+		24407DB325EBE02C005D8779 /* CommitListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DB225EBE02C005D8779 /* CommitListViewModelTests.swift */; };
+		24407DBC25EBE082005D8779 /* CommitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DBB25EBE082005D8779 /* CommitTableViewCell.swift */; };
+		24407DC425EBE08E005D8779 /* CommitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DC325EBE08E005D8779 /* CommitCellViewModel.swift */; };
+		24407DCA25EBE0CE005D8779 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24407DC925EBE0CE005D8779 /* Commit.swift */; };
 		617790C6638533589369BBFA /* Pods_CommitList_CommitListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC1545E7C8710649A7F6010 /* Pods_CommitList_CommitListUITests.framework */; };
 		B5160AFFBDE40EAB058671DB /* Pods_CommitListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B67E5C5BBF6053A4CCE33C /* Pods_CommitListTests.framework */; };
 		E142130B7C072BFAA2FE932F /* Pods_CommitList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D0841A8E9AB75A7734BF62 /* Pods_CommitList.framework */; };
@@ -56,6 +66,16 @@
 		24407D5925EBD9A9005D8779 /* CommitListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommitListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24407D5D25EBD9A9005D8779 /* CommitListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListUITests.swift; sourceTree = "<group>"; };
 		24407D5F25EBD9A9005D8779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24407D8D25EBDF32005D8779 /* CommitsResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsResponseObject.swift; sourceTree = "<group>"; };
+		24407D9525EBDF5D005D8779 /* CommitsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsService.swift; sourceTree = "<group>"; };
+		24407D9A25EBDF75005D8779 /* CommitListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListProtocols.swift; sourceTree = "<group>"; };
+		24407DA225EBDFA2005D8779 /* CommitListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListCoordinator.swift; sourceTree = "<group>"; };
+		24407DA725EBDFB0005D8779 /* CommitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListViewController.swift; sourceTree = "<group>"; };
+		24407DAC25EBDFBE005D8779 /* CommitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListViewModel.swift; sourceTree = "<group>"; };
+		24407DB225EBE02C005D8779 /* CommitListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListViewModelTests.swift; sourceTree = "<group>"; };
+		24407DBB25EBE082005D8779 /* CommitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitTableViewCell.swift; sourceTree = "<group>"; };
+		24407DC325EBE08E005D8779 /* CommitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCellViewModel.swift; sourceTree = "<group>"; };
+		24407DC925EBE0CE005D8779 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		31D0841A8E9AB75A7734BF62 /* Pods_CommitList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommitList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1F09B87038D120130366CB /* Pods-CommitList-CommitListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList-CommitListUITests.debug.xcconfig"; path = "Target Support Files/Pods-CommitList-CommitListUITests/Pods-CommitList-CommitListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6023F36FDBA92991890ABA06 /* Pods-CommitList-CommitListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList-CommitListUITests.release.xcconfig"; path = "Target Support Files/Pods-CommitList-CommitListUITests/Pods-CommitList-CommitListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +123,6 @@
 				D814012D9E71B382624580A5 /* Pods-CommitListTests.debug.xcconfig */,
 				9EB2ED039EA4E1E3272D03F7 /* Pods-CommitListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -132,10 +151,11 @@
 		24407D3725EBD9A2005D8779 /* CommitList */ = {
 			isa = PBXGroup;
 			children = (
-				24407D3825EBD9A2005D8779 /* AppDelegate.swift */,
-				24407D3A25EBD9A2005D8779 /* SceneDelegate.swift */,
-				24407D3C25EBD9A2005D8779 /* ViewController.swift */,
-				24407D3E25EBD9A2005D8779 /* Main.storyboard */,
+				24407DC825EBE0C5005D8779 /* Model */,
+				24407D8625EBDF0D005D8779 /* Commit List Screen */,
+				24407D8525EBDF04005D8779 /* Services */,
+				24407D8125EBDEF8005D8779 /* Networking */,
+				24407D7A25EBDEDF005D8779 /* Configuration */,
 				24407D4425EBD9A8005D8779 /* Assets.xcassets */,
 				24407D4625EBD9A8005D8779 /* LaunchScreen.storyboard */,
 				24407D4925EBD9A8005D8779 /* Info.plist */,
@@ -147,6 +167,7 @@
 		24407D5125EBD9A9005D8779 /* CommitListTests */ = {
 			isa = PBXGroup;
 			children = (
+				24407DB125EBDFC8005D8779 /* CommitList */,
 				24407D5225EBD9A9005D8779 /* CommitListTests.swift */,
 				24407D5425EBD9A9005D8779 /* Info.plist */,
 			);
@@ -160,6 +181,72 @@
 				24407D5F25EBD9A9005D8779 /* Info.plist */,
 			);
 			path = CommitListUITests;
+			sourceTree = "<group>";
+		};
+		24407D7A25EBDEDF005D8779 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				24407D3825EBD9A2005D8779 /* AppDelegate.swift */,
+				24407D3A25EBD9A2005D8779 /* SceneDelegate.swift */,
+				24407D3C25EBD9A2005D8779 /* ViewController.swift */,
+				24407D3E25EBD9A2005D8779 /* Main.storyboard */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		24407D8125EBDEF8005D8779 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				24407D8D25EBDF32005D8779 /* CommitsResponseObject.swift */,
+			);
+			name = Networking;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		24407D8525EBDF04005D8779 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				24407D9525EBDF5D005D8779 /* CommitsService.swift */,
+			);
+			name = Services;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		24407D8625EBDF0D005D8779 /* Commit List Screen */ = {
+			isa = PBXGroup;
+			children = (
+				24407DBA25EBE06E005D8779 /* Commit Cell */,
+				24407D9A25EBDF75005D8779 /* CommitListProtocols.swift */,
+				24407DA225EBDFA2005D8779 /* CommitListCoordinator.swift */,
+				24407DA725EBDFB0005D8779 /* CommitListViewController.swift */,
+				24407DAC25EBDFBE005D8779 /* CommitListViewModel.swift */,
+			);
+			name = "Commit List Screen";
+			sourceTree = "<group>";
+		};
+		24407DB125EBDFC8005D8779 /* CommitList */ = {
+			isa = PBXGroup;
+			children = (
+				24407DB225EBE02C005D8779 /* CommitListViewModelTests.swift */,
+			);
+			path = CommitList;
+			sourceTree = "<group>";
+		};
+		24407DBA25EBE06E005D8779 /* Commit Cell */ = {
+			isa = PBXGroup;
+			children = (
+				24407DBB25EBE082005D8779 /* CommitTableViewCell.swift */,
+				24407DC325EBE08E005D8779 /* CommitCellViewModel.swift */,
+			);
+			name = "Commit Cell";
+			sourceTree = "<group>";
+		};
+		24407DC825EBE0C5005D8779 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24407DC925EBE0CE005D8779 /* Commit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		852F6FCCF25073F129598359 /* Frameworks */ = {
@@ -410,10 +497,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24407D9625EBDF5D005D8779 /* CommitsService.swift in Sources */,
+				24407D9B25EBDF75005D8779 /* CommitListProtocols.swift in Sources */,
 				24407D4325EBD9A2005D8779 /* CommitList.xcdatamodeld in Sources */,
+				24407DCA25EBE0CE005D8779 /* Commit.swift in Sources */,
 				24407D3D25EBD9A2005D8779 /* ViewController.swift in Sources */,
+				24407D8E25EBDF32005D8779 /* CommitsResponseObject.swift in Sources */,
+				24407DC425EBE08E005D8779 /* CommitCellViewModel.swift in Sources */,
 				24407D3925EBD9A2005D8779 /* AppDelegate.swift in Sources */,
+				24407DA825EBDFB0005D8779 /* CommitListViewController.swift in Sources */,
+				24407DBC25EBE082005D8779 /* CommitTableViewCell.swift in Sources */,
+				24407DAD25EBDFBE005D8779 /* CommitListViewModel.swift in Sources */,
 				24407D3B25EBD9A2005D8779 /* SceneDelegate.swift in Sources */,
+				24407DA325EBDFA2005D8779 /* CommitListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24407D5325EBD9A9005D8779 /* CommitListTests.swift in Sources */,
+				24407DB325EBE02C005D8779 /* CommitListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
