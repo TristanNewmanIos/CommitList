@@ -16,7 +16,7 @@ class CommitListCoordinator {
     }
     
     func start() {
-        var viewController: CommitListViewControllerProtocol = CommitListViewController()
+        let viewController: CommitListViewControllerProtocol = CommitListViewController()
         var viewModel: CommitListViewModelProtocol = CommitListViewModel()
         let service: CommitsServiceProtocol = CommitsService()
         
@@ -24,6 +24,7 @@ class CommitListCoordinator {
         viewModel.view = viewController
         viewModel.service = service
         
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationController
     }
 }
