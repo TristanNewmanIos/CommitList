@@ -8,5 +8,10 @@
 import UIKit
 
 class CommitTableViewCell: UITableViewCell {
+    static var identifier = "CommitTableViewCell"
     
+    func configure() {
+        // TODO: build out in view model branch
+        return
+    }
 }

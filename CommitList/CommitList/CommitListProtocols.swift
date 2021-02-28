@@ -10,6 +10,8 @@ import UIKit
 protocol CommitListViewModelProtocol {
     var view: CommitListViewControllerProtocol! {get set}
     var service: CommitsServiceProtocol! {get set}
+    
+    func viewDidLoad()
 }
 
 protocol CommitListViewControllerProtocol: UIViewController {

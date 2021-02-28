@@ -9,4 +9,7 @@ import Foundation
 
 class CommitCellViewModel {
     
+    func viewDidLoad() {
+        return
+    }
 }
