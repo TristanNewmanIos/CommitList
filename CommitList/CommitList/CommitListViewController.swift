@@ -7,6 +7,7 @@
 
 import UIKit
 
-class CommitListViewController: UIViewController {
+class CommitListViewController: UIViewController, CommitListViewControllerProtocol {
+    var viewModel: CommitListViewModelProtocol!
     
 }

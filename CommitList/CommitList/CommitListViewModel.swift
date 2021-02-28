@@ -7,6 +7,9 @@
 
 import Foundation
 
-class CommitListViewModel {
+class CommitListViewModel: CommitListViewModelProtocol {
+    var view: CommitListViewControllerProtocol!
+    var service: CommitsServiceProtocol!
+    
     
 }

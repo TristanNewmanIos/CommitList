@@ -7,6 +7,10 @@
 
 import Foundation
 
-class CommitsService {
+class CommitsService: CommitsServiceProtocol {
+    func getCommits(completion: @escaping () -> Void) {
+        
+    }
+    
     
 }
