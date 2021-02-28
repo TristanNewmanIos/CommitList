@@ -8,9 +8,19 @@
 import Foundation
 
 struct Commit: Codable {
-    var authorName: String
-    var authorPortraitURL: URL
+    var commitDetails: CommitDetails
+    var author: Author
     var commitHash: String
-    var commitMessage: String
     
+    enum KeyValue: String {
+        case commitDetails = "commit"
+        case author
+        case commitHash = "sha"
+    }
+    
+    init(json: [String: Any]) {
+        commitDetails = json[KeyValue.commitDetails.rawValue] as? CommitDetails ?? CommitDetails(json: [:])
+        author = json[KeyValue.author.rawValue] as? Author ?? Author(json: [:])
+        commitHash = json[KeyValue.commitHash.rawValue] as? String ?? ""
+    }
 }

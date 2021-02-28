@@ -6,10 +6,18 @@
 //
 
 import Foundation
+import Alamofire
 
 class CommitsService: CommitsServiceProtocol {
-    func getCommits(completion: @escaping () -> Void) {
+    let baseURLString = "https://api.github.com/repos/tristanbnewman/WorkoutsMap"
+    let getCommitsExtension = "/commits"
+    
+    func getCommits(completion: @escaping (Result<Any, AFError>) -> Void) {
+        let requestUrlString = baseURLString + getCommitsExtension
         
+        AF.request(requestUrlString).validate().responseJSON { (response) in
+            completion(response.result)
+        }
     }
     
     

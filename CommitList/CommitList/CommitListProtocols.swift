@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol CommitListViewModelProtocol {
     var view: CommitListViewControllerProtocol! {get set}
@@ -19,7 +20,7 @@ protocol CommitListViewControllerProtocol: UIViewController {
 }
 
 protocol CommitsServiceProtocol {
-    func getCommits(completion: @escaping() -> Void)
+    func getCommits(completion: @escaping(Result<Any, AFError>) -> Void)
 }
 
 protocol CommitTableViewCellDelegate: class {

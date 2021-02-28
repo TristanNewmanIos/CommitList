@@ -8,9 +8,15 @@
 import Foundation
 
 struct CommitsResponseObject {
-    var commits: [Commit]
+    var commits = [Commit]()
     
     init(json: Any?) {
+        let dataArray = json as? [[String: Any]]
+        
+        dataArray?.forEach{
+            commits.append(Commit())
+        }
+        
         commits = []
     }
 }
