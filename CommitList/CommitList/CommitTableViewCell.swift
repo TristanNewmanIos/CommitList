@@ -37,6 +37,9 @@ class CommitTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        // TODO: Remove with vm
+        label.text = "test"
+        
         return label
     }()
     
@@ -45,6 +48,9 @@ class CommitTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.italicSystemFont(ofSize: 12)
+        // TODO: Remove with vm
+        label.text = "test"
+        
         return label
     }()
     
@@ -53,6 +59,9 @@ class CommitTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
+        // TODO: Remove with vm
+        label.text = "test"
+        
         return label
     }()
     
@@ -106,6 +115,6 @@ class CommitTableViewCell: UITableViewCell {
     }
     
     @objc func detailedLabelTapped(label: UILabel) {
-        
+        delegate?.detailedLabelTapped(labelText: label.text ?? "failed to unwrap")
     }
 }

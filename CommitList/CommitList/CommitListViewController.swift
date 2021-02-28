@@ -14,6 +14,7 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(CommitTableViewCell.self, forCellReuseIdentifier: CommitTableViewCell.identifier)
         tableView.separatorStyle = .none
         return tableView
@@ -58,6 +59,8 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
     }
     
     private func setUpView() {
+        title  = "title"
+        
         func addViews() {
             view.addSubview(tableView)
             view.addSubview(overlayView)
@@ -106,10 +109,11 @@ extension CommitListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension CommitListViewController: CommitTableViewCellDelegate {
-    func detailedLabelTapped() {
+    func detailedLabelTapped(labelText: String) {
         // TODO: Add view model flag in view model branch
         overlayView.isHidden = !overlayView.isHidden
         detailLabel.isHidden = !detailLabel.isHidden
+        print("detailedLabelTapped from delegate")
 //        detailLabel.text = viewModel.detailLabelText
     }
 }

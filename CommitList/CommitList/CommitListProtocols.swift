@@ -23,5 +23,5 @@ protocol CommitsServiceProtocol {
 }
 
 protocol CommitTableViewCellDelegate: class {
-    func detailedLabelTapped()
+    func detailedLabelTapped(labelText: String)
 }
