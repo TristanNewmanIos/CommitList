@@ -32,18 +32,28 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
         return view
     }()
     
+    lazy var labelContainerView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 4
+        view.isUserInteractionEnabled = false
+        
+        return view
+    }()
+    
     lazy var detailLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "HelveticaNeue", size: 12)
-        label.backgroundColor = .lightGray
+        label.backgroundColor = .clear
         label.textColor = .white
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.layer.cornerRadius = 4
         label.clipsToBounds = true
         label.text = "THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE THIS IS HUGEEE TEXT DELETE"
         label.isHidden = true
+        label.isUserInteractionEnabled = false
         
         return label
     }()
@@ -59,12 +69,13 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
     }
     
     private func setUpView() {
-        title  = "title"
+        title  = viewModel.title
         
         func addViews() {
             view.addSubview(tableView)
             view.addSubview(overlayView)
-            overlayView.addSubview(detailLabel)
+            overlayView.addSubview(labelContainerView)
+            labelContainerView.addSubview(detailLabel)
         }
         
         func addConstraints() {
@@ -78,10 +89,15 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
             overlayView.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
             overlayView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor).isActive = true
             
-            detailLabel.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor).isActive = true
-            detailLabel.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor).isActive = true
-            detailLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 75).isActive = true
-            detailLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -75).isActive = true
+            labelContainerView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -50).isActive = true
+            labelContainerView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 50).isActive = true
+            labelContainerView.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor).isActive = true
+            labelContainerView.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor).isActive = true
+            
+            detailLabel.leadingAnchor.constraint(equalTo: labelContainerView.leadingAnchor, constant: 15).isActive = true
+            detailLabel.trailingAnchor.constraint(equalTo: labelContainerView.trailingAnchor, constant: -15).isActive = true
+            detailLabel.topAnchor.constraint(equalTo: labelContainerView.topAnchor, constant: 15).isActive = true
+            detailLabel.bottomAnchor.constraint(equalTo: labelContainerView.bottomAnchor, constant: -15).isActive = true
         }
         
         addViews()
@@ -89,7 +105,10 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
     }
     
     @objc func overlayTapped() {
-        print("overlay tapped")
+        let hide = viewModel.isDetailedViewHidden()
+        
+        overlayView.isHidden = hide
+        detailLabel.isHidden = hide
     }
 }
 
@@ -110,10 +129,11 @@ extension CommitListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CommitListViewController: CommitTableViewCellDelegate {
     func detailedLabelTapped(labelText: String) {
-        // TODO: Add view model flag in view model branch
-        overlayView.isHidden = !overlayView.isHidden
-        detailLabel.isHidden = !detailLabel.isHidden
-        print("detailedLabelTapped from delegate")
-//        detailLabel.text = viewModel.detailLabelText
+        detailLabel.text = labelText
+        
+        let hide = viewModel.isDetailedViewHidden()
+        
+        overlayView.isHidden = hide
+        detailLabel.isHidden = hide
     }
 }

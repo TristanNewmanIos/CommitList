@@ -14,6 +14,8 @@ class CommitListViewModel: CommitListViewModelProtocol {
     
     var commitsResponseObject: CommitsResponseObject?
     var cellModels: [CommitCellModelProtocol] = []
+    var isDetailLabelHidden = true
+    var title = "CommitList"
     
     func viewDidLoad() {
         createData()
@@ -25,6 +27,11 @@ class CommitListViewModel: CommitListViewModelProtocol {
     
     func cellModel(indexPath: IndexPath) -> CommitCellModelProtocol {
         return cellModels[indexPath.row]
+    }
+    
+    func isDetailedViewHidden() -> Bool {
+        isDetailLabelHidden = !isDetailLabelHidden
+        return isDetailLabelHidden
     }
     
     private func createData() {

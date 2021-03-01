@@ -11,10 +11,12 @@ import Alamofire
 protocol CommitListViewModelProtocol {
     var view: CommitListViewControllerProtocol! {get set}
     var service: CommitsServiceProtocol! {get set}
+    var title: String {get}
     
     func viewDidLoad()
     func numberOfRows() -> Int
     func cellModel(indexPath: IndexPath) -> CommitCellModelProtocol
+    func isDetailedViewHidden() -> Bool
 }
 
 protocol CommitListViewControllerProtocol: UIViewController {

@@ -38,30 +38,32 @@ class CommitTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18.0)
-        // TODO: Remove with vm
-        label.text = "test"
         
         return label
     }()
     
     lazy var messageLabel: UILabel = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(messageLabelTapped))
+
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.italicSystemFont(ofSize: 12)
-        // TODO: Remove with vm
-        label.text = "test"
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tapGesture)
         
         return label
     }()
     
     lazy var hashLabel: UILabel = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hashLabelTapped))
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
-        // TODO: Remove with vm
-        label.text = "test"
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tapGesture)
         
         return label
     }()
@@ -123,7 +125,11 @@ class CommitTableViewCell: UITableViewCell {
         messageLabel.text = viewModel.messageLabelText
     }
     
-    @objc func detailedLabelTapped(label: UILabel) {
-        delegate?.detailedLabelTapped(labelText: label.text ?? "failed to unwrap")
+    @objc func hashLabelTapped() {
+        delegate?.detailedLabelTapped(labelText: hashLabel.text ?? "failed to unwrap")
+    }
+    
+    @objc func messageLabelTapped() {
+        delegate?.detailedLabelTapped(labelText: messageLabel.text ?? "failed to unwrap")
     }
 }
