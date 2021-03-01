@@ -13,7 +13,6 @@ class CommitListViewModel: CommitListViewModelProtocol {
     var service: CommitsServiceProtocol!
     
     var commitsResponseObject: CommitsResponseObject?
-    var commits = [Commit]()
     var cellModels: [CommitCellModelProtocol] = []
     
     func viewDidLoad() {
@@ -21,7 +20,7 @@ class CommitListViewModel: CommitListViewModelProtocol {
     }
     
     func numberOfRows() -> Int {
-        return commits.count
+        return cellModels.count
     }
     
     func cellModel(indexPath: IndexPath) -> CommitCellModelProtocol {
@@ -30,24 +29,38 @@ class CommitListViewModel: CommitListViewModelProtocol {
     
     private func createData() {
         getCommits()
-        
-        commits.forEach {
-            cellModels.append(CommitCellViewModel(nameLabelText: $0.commitDetails.author.name, hashLabelText: $0.commitHash, messageLabelText: $0.commitDetails.message))
-        }
+            
     }
     
     private func getCommits() {
+        
+        let queue = DispatchQueue.init(label: "queue")
+        let group = DispatchGroup()
+        
+        group.enter()
         service.getCommits(completion: { (result) in
             switch result {
             case .success(let value):
                 self.commitsResponseObject = CommitsResponseObject(json: value)
                 if let commits = self.commitsResponseObject?.commits {
-                    self.commits = commits
+                    commits.forEach {
+                        self.cellModels.append(CommitCellViewModel(nameLabelText: $0.commitDetails.author.name, hashLabelText: $0.commitHash, messageLabelText: $0.commitDetails.message))
+                    }
                 }
+                group.leave()
                 
             case .failure(let error):
                 print("your error was: ", error.errorDescription)
+                group.leave()
+            }
+            
+        })
+        
+        group.notify(queue: queue, execute: {
+            DispatchQueue.main.async {
+                self.view.tableView.reloadData()
             }
         })
+        
     }
 }
