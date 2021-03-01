@@ -51,7 +51,11 @@ class CommitListViewModel: CommitListViewModelProtocol {
                 self.commitsResponseObject = CommitsResponseObject(json: value)
                 if let commits = self.commitsResponseObject?.commits {
                     commits.forEach {
-                        self.cellModels.append(CommitCellViewModel(nameLabelText: $0.commitDetails.author.name, hashLabelText: $0.commitHash, messageLabelText: $0.commitDetails.message))
+                        self.cellModels.append(CommitCellViewModel(
+                                                nameLabelText: $0.commitDetails.author.name,
+                                                hashLabelText: $0.commitHash,
+                                                messageLabelText: $0.commitDetails.message,
+                                                imageUrlString: $0.author.imageUrlString))
                     }
                 }
                 group.leave()

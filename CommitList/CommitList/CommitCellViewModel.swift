@@ -11,10 +11,12 @@ class CommitCellViewModel: CommitCellModelProtocol {
     var nameLabelText: String
     var hashLabelText: String
     var messageLabelText: String
+    var imageUrl: URL?
     
-    init(nameLabelText: String, hashLabelText: String, messageLabelText: String) {
+    init(nameLabelText: String, hashLabelText: String, messageLabelText: String, imageUrlString: String) {
         self.nameLabelText = nameLabelText
         self.hashLabelText = hashLabelText
         self.messageLabelText = messageLabelText
+        self.imageUrl = URL(string: imageUrlString)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CommitTableViewCell: UITableViewCell {
     static var identifier = "CommitTableViewCell"
@@ -31,6 +32,15 @@ class CommitTableViewCell: UITableViewCell {
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
         return view
+    }()
+    
+    lazy var authorImageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 4
+        imageView.clipsToBounds = true
+        
+        return imageView
     }()
     
     lazy var nameLabel: UILabel = {
@@ -83,6 +93,7 @@ class CommitTableViewCell: UITableViewCell {
         
         contentView.addSubview(shadowContainerView)
         shadowContainerView.addSubview(containerView)
+        containerView.addSubview(authorImageView)
         containerView.addSubview(nameLabel)
         containerView.addSubview(messageLabel)
         containerView.addSubview(hashLabel)
@@ -97,16 +108,21 @@ class CommitTableViewCell: UITableViewCell {
         containerView.topAnchor.constraint(equalTo: shadowContainerView.topAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: shadowContainerView.bottomAnchor).isActive = true
         
-        nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive = true
+        authorImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        authorImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        authorImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20).isActive = true
+        authorImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20).isActive = true
+        
+        nameLabel.leadingAnchor.constraint(equalTo: authorImageView.trailingAnchor, constant: 10).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: authorImageView.centerYAnchor).isActive = true
         
-        messageLabel.leadingAnchor.constraint(equalTo: hashLabel.leadingAnchor).isActive = true
+        messageLabel.leadingAnchor.constraint(equalTo: authorImageView.leadingAnchor).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: authorImageView.bottomAnchor, constant: 3).isActive = true
         
-        hashLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
-        hashLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
+        hashLabel.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor).isActive = true
+        hashLabel.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor).isActive = true
         hashLabel.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 10).isActive = true
         hashLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
@@ -123,6 +139,10 @@ class CommitTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.nameLabelText
         hashLabel.text = viewModel.hashLabelText
         messageLabel.text = viewModel.messageLabelText
+        
+        if let imageUrl = viewModel.imageUrl {
+            authorImageView.kf.setImage(with: imageUrl)
+        }
     }
     
     @objc func hashLabelTapped() {

@@ -36,4 +36,5 @@ protocol CommitCellModelProtocol {
     var nameLabelText: String {get}
     var hashLabelText: String {get}
     var messageLabelText: String {get}
+    var imageUrl: URL? {get}
 }
