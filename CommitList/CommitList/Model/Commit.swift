@@ -19,8 +19,8 @@ struct Commit: Codable {
     }
     
     init(json: [String: Any]) {
-        commitDetails = json[KeyValue.commitDetails.rawValue] as? CommitDetails ?? CommitDetails(json: [:])
-        author = json[KeyValue.author.rawValue] as? Author ?? Author(json: [:])
+        commitDetails = CommitDetails(json: json[KeyValue.commitDetails.rawValue] as? [String: Any] ?? [:])
+        author = Author(json: json[KeyValue.author.rawValue] as? [String: Any] ?? [:])
         commitHash = json[KeyValue.commitHash.rawValue] as? String ?? ""
     }
 }

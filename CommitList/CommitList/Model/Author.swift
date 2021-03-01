@@ -8,13 +8,13 @@
 import Foundation
 
 struct Author: Codable {
-    var authorPortraitUrl: String
+    var portraitUrlString: String
     
     enum KeyValue: String {
-        case authorPortraitUrl = "avatar_url"
+        case portraitUrlString = "avatar_url"
     }
     
     init(json: [String: Any]) {
-        authorPortraitUrl = json[KeyValue.authorPortraitUrl.rawValue] as? String ?? ""
+        portraitUrlString = json[KeyValue.portraitUrlString.rawValue] as? String ?? ""
     }
 }

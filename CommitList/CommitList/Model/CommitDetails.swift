@@ -17,7 +17,7 @@ struct CommitDetails: Codable {
     }
     
     init(json: [String: Any]) {
-        author = json[KeyValue.author.rawValue] as? CommitAuthor ?? CommitAuthor(name: "")
+        author = CommitAuthor(json: json[KeyValue.author.rawValue] as? [String: Any] ?? [:])
         message = json[KeyValue.message.rawValue] as? String ?? ""
     }
 }

@@ -17,6 +17,6 @@ struct CommitsResponseObject {
             commits.append(Commit(json: $0))
         }
         
-        commits = []
+//        commits = []
     }
 }
