@@ -14,13 +14,26 @@ class CommitListViewModel: CommitListViewModelProtocol {
     
     var commitsResponseObject: CommitsResponseObject?
     var commits = [Commit]()
+    var cellModels: [CommitCellModelProtocol] = []
     
     func viewDidLoad() {
         createData()
     }
     
+    func numberOfRows() -> Int {
+        return commits.count
+    }
+    
+    func cellModel(indexPath: IndexPath) -> CommitCellModelProtocol {
+        return cellModels[indexPath.row]
+    }
+    
     private func createData() {
         getCommits()
+        
+        commits.forEach {
+            cellModels.append(CommitCellViewModel(nameLabelText: $0.commitDetails.author.name, hashLabelText: $0.commitHash, messageLabelText: $0.commitDetails.message))
+        }
     }
     
     private func getCommits() {
@@ -28,7 +41,6 @@ class CommitListViewModel: CommitListViewModelProtocol {
             switch result {
             case .success(let value):
                 self.commitsResponseObject = CommitsResponseObject(json: value)
-                
                 if let commits = self.commitsResponseObject?.commits {
                     self.commits = commits
                 }

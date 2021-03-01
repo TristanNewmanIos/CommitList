@@ -7,9 +7,14 @@
 
 import Foundation
 
-class CommitCellViewModel {
+class CommitCellViewModel: CommitCellModelProtocol {
+    var nameLabelText: String
+    var hashLabelText: String
+    var messageLabelText: String
     
-    func viewDidLoad() {
-        return
+    init(nameLabelText: String, hashLabelText: String, messageLabelText: String) {
+        self.nameLabelText = nameLabelText
+        self.hashLabelText = hashLabelText
+        self.messageLabelText = messageLabelText
     }
 }

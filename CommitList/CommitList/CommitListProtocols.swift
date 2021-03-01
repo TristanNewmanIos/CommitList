@@ -13,10 +13,13 @@ protocol CommitListViewModelProtocol {
     var service: CommitsServiceProtocol! {get set}
     
     func viewDidLoad()
+    func numberOfRows() -> Int
+    func cellModel(indexPath: IndexPath) -> CommitCellModelProtocol
 }
 
 protocol CommitListViewControllerProtocol: UIViewController {
     var viewModel: CommitListViewModelProtocol! {get set}
+    var tableView: UITableView {get}
 }
 
 protocol CommitsServiceProtocol {
@@ -25,4 +28,10 @@ protocol CommitsServiceProtocol {
 
 protocol CommitTableViewCellDelegate: class {
     func detailedLabelTapped(labelText: String)
+}
+
+protocol CommitCellModelProtocol {
+    var nameLabelText: String {get}
+    var hashLabelText: String {get}
+    var messageLabelText: String {get}
 }

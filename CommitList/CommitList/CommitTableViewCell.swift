@@ -11,6 +11,7 @@ class CommitTableViewCell: UITableViewCell {
     static var identifier = "CommitTableViewCell"
     
     weak var delegate: CommitTableViewCellDelegate?
+    var viewModel: CommitCellModelProtocol?
     
     lazy var shadowContainerView: UIView = {
         let view = UIView()
@@ -108,10 +109,18 @@ class CommitTableViewCell: UITableViewCell {
         hashLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
     
-    func configure(cellDelegate: CommitTableViewCellDelegate?) {
+    func configure(cellDelegate: CommitTableViewCellDelegate?, cellModel: CommitCellModelProtocol) {
         // TODO: build out in view model branch
         delegate = cellDelegate
-        return
+        viewModel = cellModel
+        
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        nameLabel.text = viewModel.nameLabelText
+        hashLabel.text = viewModel.hashLabelText
+        messageLabel.text = viewModel.messageLabelText
     }
     
     @objc func detailedLabelTapped(label: UILabel) {

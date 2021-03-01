@@ -95,7 +95,7 @@ class CommitListViewController: UIViewController, CommitListViewControllerProtoc
 
 extension CommitListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,7 +103,7 @@ extension CommitListViewController: UITableViewDelegate, UITableViewDataSource {
             return CommitTableViewCell()
         }
         
-        cell.configure(cellDelegate: self)
+        cell.configure(cellDelegate: self, cellModel: viewModel.cellModel(indexPath: indexPath))
         return cell
     }
 }
