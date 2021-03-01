@@ -29,10 +29,12 @@ class CommitListViewModel: CommitListViewModelProtocol {
             case .success(let value):
                 self.commitsResponseObject = CommitsResponseObject(json: value)
                 
-                commits = commitsResponseObject?.commits
+                if let commits = self.commitsResponseObject?.commits {
+                    self.commits = commits
+                }
                 
             case .failure(let error):
-                print("your error was: ", error.description)
+                print("your error was: ", error.errorDescription)
             }
         })
     }

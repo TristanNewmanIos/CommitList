@@ -13,8 +13,8 @@ struct CommitsResponseObject {
     init(json: Any?) {
         let dataArray = json as? [[String: Any]]
         
-        dataArray?.forEach{
-            commits.append(Commit())
+        dataArray?.forEach {
+            commits.append(Commit(json: $0))
         }
         
         commits = []
