@@ -128,7 +128,6 @@ class CommitTableViewCell: UITableViewCell {
     }
     
     func configure(cellDelegate: CommitTableViewCellDelegate?, cellModel: CommitCellModelProtocol) {
-        // TODO: build out in view model branch
         delegate = cellDelegate
         viewModel = cellModel
         

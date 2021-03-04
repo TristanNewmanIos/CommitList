@@ -8,7 +8,6 @@
 import Foundation
 
 struct Commit: Codable {
-    // TODO: Move the authors name between details to author objects
     var commitDetails: CommitDetails
     var author: Author
     var commitHash: String

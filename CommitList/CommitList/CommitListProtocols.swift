@@ -12,6 +12,7 @@ protocol CommitListViewModelProtocol {
     var view: CommitListViewControllerProtocol! {get set}
     var service: CommitsServiceProtocol! {get set}
     var title: String {get}
+    var cellModels: [CommitCellModelProtocol] {get}
     
     func viewDidLoad()
     func numberOfRows() -> Int

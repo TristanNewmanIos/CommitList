@@ -2,7 +2,7 @@
 //  CommitsService.swift
 //  CommitList
 //
-//  Created by Tristan Newman on 2/28/21.
+//  Created by Tristan Newman on 2/28/21
 //
 
 import Foundation

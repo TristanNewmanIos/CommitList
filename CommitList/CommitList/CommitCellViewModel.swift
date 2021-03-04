@@ -8,6 +8,7 @@
 import Foundation
 
 class CommitCellViewModel: CommitCellModelProtocol {
+    
     var nameLabelText: String
     var hashLabelText: String
     var messageLabelText: String

@@ -16,7 +16,5 @@ struct CommitsResponseObject {
         dataArray?.forEach {
             commits.append(Commit(json: $0))
         }
-        
-//        commits = []
     }
 }
